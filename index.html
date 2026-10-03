@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance & Advice </title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div id="loginPage" class="page-section active">
+        <div class="container">
+        <h1>Welcome to Your Planner</h1>
+        <form id="loginForm">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" required placeholder="enter your name here">
+
+        <label for="userSalary">Monthly Salary:</label>
+        <input type="number" id="userSalary" required min="5000" step="500" placeholder="enter your salay in USD">
+                
+        <button type="submit">Go!</button>
+        </form>
+        </div>
+    </div>
+
+    <div id="home" class="page-section">
+        <div class="container">
+        <h1 id="welcomeMessage"></h1> 
+        <p>calculate your expenses to get your savings ratio and advice</p>
+            
+        <button class="primary-btn" onclick="showPage('advicePage')">start</button>
+            
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        </div> 
+    </div>
+
+    <div id="advicePage" class="page-section">
+        <div class="container">
+            <h2> Expense Calculator</h2>
+            
+            <form id="expenseForm">
+            <label for="monthlyExpenses">Total Monthly Expenses:</label>
+            <input type="number" id="monthlyExpenses" required min="0">
+                
+            <button type="submit">Tell me Advice</button>
+            </form>
+            
+            <div id="resultsArea" class="hidden">
+                <hr>
+                <h3>Analysis Results</h3>
+                <p>Your Monthly Salary: <span id="salaryDisplay"></span></p>
+                <p>Your Projected Savings: <span id="savingAmount"></span></p>
+                <p>Savings Ratio: <span id="savingRatio"></span></p>
+                
+                <div id="adviceSection" class="advice-box">
+                <h4>Today's Advice:</h4>
+                <p id="personalAdvice"></p>
+                </div>
+            </div>
+
+            <button class="back-btn" onclick="showPage('home')">Back to home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
